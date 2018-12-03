@@ -24,11 +24,13 @@ mysqli_set_charset($conn, 'utf8');
  </head>
  <body>
 
+ 	<h1>Ordenar Pizza</h1>
+
  	<div id="divOrden">
 
  		<label>Vegetales: </label>
 
- 		<select name="veg" id="sVeg" required>
+ 		<select name="veg" id="sVeg" required >
  			<?php 
  			$sql='SELECT tipo_vegetales FROM tipos_vegetales;';
 
@@ -89,17 +91,17 @@ mysqli_set_charset($conn, 'utf8');
  			 ?>
  		</select>
 		
-
+		<button id="btnGenPrecio" onclick="generarPrecio('genPrecio')">Generar Precio</button>
 		<button id="btnOrdenar" onclick="ordenar('orden')">Enviar Orden</button>
+		<button id="btnVolver" onclick="location.href='inicioUsuario.php'">Volver a Inicio</button>
 		<button onclick="cerrarSesion('cerrar')">Cerrar Sesion</button>
 
  	</div>
 
 
- 	<div id="divResp">
- 		
+	<div id="divPrecio"></div>
 
- 	</div>
+ 	<div id="divResp"></div>
  	
 
 

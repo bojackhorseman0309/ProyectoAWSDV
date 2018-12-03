@@ -17,7 +17,11 @@ if (!isset($_SESSION['correoSesh']) || empty($_SESSION['correoSesh'])) {
  </head>
  <body>
 
+ 	<h1>Bienvenidos a Pizza HuTML</h1>
+
  	<button onclick="location.href='ordenar.php';">Ordenar</button>
+ 	<button onclick="location.href='cambios.php';">Ajustes de Usuario</button>
+ 	<button id="btnCompras" onclick="redCompras()";>Ver Compras</button>
  	<button onclick="cerrarSesion('cerrar')">Cerrar Sesion</button>
 
  	

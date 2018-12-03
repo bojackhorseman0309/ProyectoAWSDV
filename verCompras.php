@@ -25,8 +25,12 @@ mysqli_set_charset($conn, 'utf8');
  </head>
  <body onload="cargaLista('lista')">
 
+ 	<h1>Ordenes Realizadas</h1>
+
 	<div id="divVerOrden" >
 	</div>
+
+	<button id="btnVolver" onclick="location.href='inicioUsuario.php'">Volver a Inicio</button>
 
 
  	<button onclick="cerrarSesion('cerrar')">Cerrar Sesion</button>
