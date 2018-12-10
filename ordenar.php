@@ -17,93 +17,138 @@ mysqli_set_charset($conn, 'utf8');
 
  <!DOCTYPE html>
  <html lang="en">
+ 
+
  <head>
+ 	<link rel="stylesheet" type="text/css" href="css/css.css">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
  	<meta charset="utf-8">
+
  	<title>Ordenar</title>
  	<script type="text/javascript" src="codJs.js"></script>
  </head>
- <body>
+ <body background="img/pizza22.gif">
 
- 	<h1>Ordenar Pizza</h1>
+ 	<div class="container-fluid">
+ 		
+	 		<h1>Ordenar Pizza</h1>
 
- 	<div id="divOrden">
+	 	<div id="divOrden">
 
- 		<label>Vegetales: </label>
+	 		 <div class="col-sm-3"><label style="color: white">Vegetales: </label>
 
- 		<select name="veg" id="sVeg" required >
- 			<?php 
- 			$sql='SELECT tipo_vegetales FROM tipos_vegetales;';
+			 		<select name="veg" id="sVeg" required class="form-control">
 
- 			$res=mysqli_query($conn, $sql);
+			 			<?php 
+			 			$sql='SELECT tipo_vegetales FROM tipos_vegetales;';
 
- 			while ($row = mysqli_fetch_array($res)) {
- 				echo "<option>" . $row['tipo_vegetales']. "</option>";
- 			}
+			 			$res=mysqli_query($conn, $sql);
 
- 			 ?>
- 		</select>
+			 			while ($row = mysqli_fetch_array($res)) {
+			 				echo "<option>" . $row['tipo_vegetales']. "</option>";
+			 			}
 
-		<label>Carnes: </label>
+			 			 ?>
 
- 		<select name="carne" id="sCar" required>
- 			<?php 
+			 		</select>
 
- 			$sql='SELECT tipo_carne FROM tipo_carnes;';
+	 		</div>
 
- 			$res=mysqli_query($conn, $sql);
+	 		
+		 <div class="col-sm-3"><label style="color: white">Carnes: </label>
 
- 			while ($row = mysqli_fetch_array($res)) {
- 				echo "<option>" . $row['tipo_carne']. "</option>";
- 			}
+		 		<select name="carne" id="sCar" required class="form-control">
+		 			<?php 
 
- 			 ?>
- 		</select>
+		 			$sql='SELECT tipo_carne FROM tipo_carnes;';
 
- 		<label>Masa: </label>
+		 			$res=mysqli_query($conn, $sql);
 
- 		<select name="masa" id="sMasa" required>
- 			<?php 
+		 			while ($row = mysqli_fetch_array($res)) {
+		 				echo "<option>" . $row['tipo_carne']. "</option>";
+		 			}
 
- 			$sql='SELECT tipo_masa FROM tipo_masas;';
+		 			 ?>
+		 		</select>
 
- 			$res=mysqli_query($conn, $sql);
+	 	</div>
+			
+			 <div class="col-sm-3"><label style="color: white">Masa: </label>
 
- 			while ($row = mysqli_fetch_array($res)) {
- 				echo "<option>" . $row['tipo_masa']. "</option>";
- 			}
+		 		<select name="masa" id="sMasa" required class="form-control">
 
- 			 ?>
- 		</select>
+		 			<?php 
 
- 		<label>Tamaño: </label>
+		 			$sql='SELECT tipo_masa FROM tipo_masas;';
 
- 		<select name="tamanho" id="sTama" required>
- 			<?php 
+		 			$res=mysqli_query($conn, $sql);
 
- 			$sql='SELECT tamanho FROM tamanho_pizza;';
+		 			while ($row = mysqli_fetch_array($res)) {
+		 				echo "<option>" . $row['tipo_masa']. "</option>";
+		 			}
 
- 			$res=mysqli_query($conn, $sql);
+		 			 ?>
 
- 			while ($row = mysqli_fetch_array($res)) {
- 				echo "<option>" . $row['tamanho']. "</option>";
- 			}
+		 		</select>
 
- 			 ?>
- 		</select>
-		
-		<button id="btnGenPrecio" onclick="generarPrecio('genPrecio')">Generar Precio</button>
-		<button id="btnOrdenar" onclick="ordenar('orden')">Enviar Orden</button>
-		<button id="btnVolver" onclick="location.href='inicioUsuario.php'">Volver a Inicio</button>
-		<button onclick="cerrarSesion('cerrar')">Cerrar Sesion</button>
+	 		</div>
+	 		
+	 		 <div class="col-sm-3"><label style="color: white">Tamaño: </label>
+
+		 		<select name="tamanho" id="sTama" required class="form-control">
+
+		 			<?php 
+
+		 			$sql='SELECT tamanho FROM tamanho_pizza;';
+
+		 			$res=mysqli_query($conn, $sql);
+
+		 			while ($row = mysqli_fetch_array($res)) {
+		 				echo "<option>" . $row['tamanho']. "</option>";
+		 			}
+
+		 			 ?>
+
+		 		</select>
+
+			</div>
+
+	 		
+			
+
+	 	</div>
+		<div>
+			
+			<button id="btnGenPrecio" onclick="generarPrecio('genPrecio')" class="btn btn-info">Generar Precio</button>
+			<button id="btnOrdenar" onclick="ordenar('orden')" class="btn btn-info">Enviar Orden</button>
+			<button id="btnVolver" onclick="location.href='inicioUsuario.php'" class="btn btn-info">Volver a Inicio</button>
+			<button onclick="cerrarSesion('cerrar')" class="btn btn-info">Cerrar Sesion</button>
+
+
+		</div>
+	 
+		<div class="col-sm-3" style="visibility: hidden" id="divPrec">
+			<label for="divPrecio">Precio: </label>
+		<textarea class="form-control" rows="1" id="divPrecio" ></textarea>
+
+			
+
+		</div>
+		<br>
+
+		<div id="divResp" class="col-sm-3">
+	 		
+
+	 	</div>
+
+	 
+	 	
+
 
  	</div>
 
-
-	<div id="divPrecio"></div>
-
- 	<div id="divResp"></div>
  	
-
-
  </body>
  </html>

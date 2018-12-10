@@ -1,0 +1,35 @@
+.navbar-nav{
+			font-size: 20px;
+
+		}
+		#divimgPrincipal{
+			margin-top: 150px;
+			margin-left: 100px;
+			margin-right: 100px;
+		}
+
+		#divProductos{
+			margin-top: 20px;
+		}
+		
+		.productos{
+			margin-top: 50px;
+		}
+		body{
+			background-color: #EBF5FB  ;
+		}
+		footer{
+			margin-top: 50px;
+			padding: 50px 0;
+	        background:white;
+	        color: black;
+		}
+		.fab{
+			size: 7px;
+		}
+		.menus{
+			margin-left: 130px;
+		}
+		.menus1{
+			margin-left: 110px;
+		}

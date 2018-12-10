@@ -1,17 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+<html style="background: url(img/pizza4.jpg) no-repeat center center fixed;background-size: cover;-moz-background-size: cover;-webkit-background-size: cover;-o-background-size:cover">
+
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css\bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="estiloPag.css">
+	<link rel="stylesheet" type="text/css" href="w3.css">
 	<title>PIZZERIA</title>
 	<script type="text/javascript" src="codJs.js"></script>
 </head>
 <body>
 
-	<h1>Bienvenidos a Pizza HuTML</h1>
+	<div class="container-fluid">
+		
+		<h1 id="head1" style="color: white">Bienvenidos a CIAO</h1>
+
+		<ul>
+			  <li><a class="active" href="inicio.html">Inicio</a></li>
+			  <li><a href="registrarse.php">Registrarse</a></li>
+			  <li><a href="iniciarSesion.php">Iniciar Sesión</a></li>
+		</ul>
 
 
-<button onclick="location.href='registrarse.php';">Registrarse</button>
-<button onclick="location.href='iniciarSesion.php';">Iniciar Sesion</button>
+
+		
+		<div class="w3-content w3-display-container" style="margin-top: 20px">
+			  <img class="mySlides" src="img/portada-pizza.jpg" style="width:100%">
+			  <img class="mySlides" src="img/pizza13.jpg" style="width:100%">
+
+			  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+			  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+		</div>
+
+
+		<!-- <div id="divBotones">
+			<button onclick="location.href='registrarse.php';" class="btn btn-primary botonesIni" >Registrarse</button>
+			<button onclick="location.href='iniciarSesion.php';" class="btn btn-success botonesIni" >Iniciar Sesion</button>
+		</div> 
+				--> 
+	</div>
+
+	<script type="text/javascript">
+		
+		var slideIndex = 1;
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+		  showDivs(slideIndex += n);
+		}
+
+		function showDivs(n) {
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  if (n > x.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++) {
+		     x[i].style.display = "none";  
+		  }
+		  x[slideIndex-1].style.display = "block";  
+		}
+		
+	</script>
 
 
 
